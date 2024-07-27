@@ -1,13 +1,16 @@
-const express = require('express');
-const app = express();
+// Importing the 'events' module from Node.js
+const EventEmitter = require('events');
 
-app.use(express.json());
-//import routers
-const router = require('./router/student.route');
-app.use('/api', router)
-    //implement routers
+// Creating an instance of EventEmitter
+const eventEmitter = new EventEmitter();
 
+// Example function to handle the event
+const eventHandler = () => {
+    console.log('Event occurred!');
+};
 
-app.listen(3000, () => {
-    console.log("Run Successfully")
-})
+// Attaching the event handler function to the custom event
+eventEmitter.on('customEvent', eventHandler);
+
+// Emitting the custom event
+eventEmitter.emit('customEvent');

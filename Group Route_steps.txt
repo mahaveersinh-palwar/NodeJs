@@ -1,0 +1,13 @@
+//Route instance
+
+const router = express.Router();
+
+router.get
+router.post
+router.put
+router.delete
+
+we are replacing all route expresss route to route intance
+
+app.use('/api',router)
+now we implement route intance in server intance using use method  
